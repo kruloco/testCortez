@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html lang="es-Es">
+    <head> 
+        <title>LOGIN</title> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+        <script src="phonegap.js"></script>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.0.min.js"></script>
+        <script src="js/funciones.js"></script>
+    </head> 
+    <body> 
+        <div data-role="page" id="loginPage">
+            <div data-role="header" data-position="fixed">
+                <h3>Login</h3>
+            </div>
+            <div data-role="content">
+                <form id="login-form">
+                    <label for="nombre">Nombre:</label>
+                    <input name="nombre" id="nombre" type="text" data-clear-btn="true">
+                    <label for="mail">Mail:</label>
+                    <input name="mail" id="mail" value="" type="email" data-clear-btn="true">
+                    <input type="button" id="btnSubmit" value="Enviar"  />
+                </form>
+                <a id='lnkDialog' href="#dialog" data-rel="dialog" data-transition="pop" style='display:none;'></a>
+            </div>
+        </div>
+
+        <!-- DIALOG ------------------------------------------------------------------ -->  
+        <div data-role="page" id="dialog">
+            <div data-role="header">
+                <h1 id="dialogTitle"></h1>
+            </div>    
+            <div data-role="content" id="dialogText">
+            </div>    
+        </div>
+
+    </body>
+</html>
