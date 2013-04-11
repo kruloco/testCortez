@@ -3,7 +3,7 @@ $(function() {
 // Objeto para encapsular las funciones
     var Login = {};
     var celular = {'estado': false, 'conexion': '', 'plataforma': ''};
-    var servidor = "http://colectivo.site90.net/";
+    var servidor = "http://colectivo.site90.net/controladorMail.php";
 
     (function(app) {
 
@@ -18,7 +18,6 @@ $(function() {
             $("#login-form #btnSubmit").on('click', function(e) {
                 if (celular.estado === true)
                 {
-                    console.log(celular.estado);
                     app.enviarFormulario();
                 }
                 else
@@ -82,16 +81,11 @@ $(function() {
             });
             if (camposValidados) {
                 $.ajax({
-                    url: servidor + 'controladorMail.php',
+                    url: servidor,
                     dataType: 'jsonp',
                     data: form.serialize(),
                     success: function(data) {
-                        if (data === true) {
-                            app.mostrarModal('Clave enviada a su mail', 'OK');
-                        }
-                        else {
-                            app.mostrarModal('El mail ingresado ya existe', 'Error');
-                        }
+                        app.mostrarModal(data.msj, data.status);
                         form[0].reset();
                     },
                     error: function(data) {
