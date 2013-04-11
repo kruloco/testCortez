@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.phonegap.login"
         version = "2.2.0">
-    <name>GPSColectivos</name>
+    <name>FormularioLogin</name>
 
     <description>
-        Genera la posición actual.
+        Login remoto.
     </description>
 
     <author href="http://phonegap.com" email="manzurcarim@gmail.com">
